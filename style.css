@@ -1,8 +1,8 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f2f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9ecef;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,35 +11,47 @@ body {
 
 .container {
     width: 100%;
-    max-width: 800px;
+    max-width: 900px;
     padding: 20px;
 }
 
 .profile-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    text-align: left;
+}
+
+.left-column {
+    flex: 1;
+    margin-right: 30px;
+}
+
+.right-column {
+    flex: 1;
 }
 
 h1 {
-    color: #1a73e8;
-    margin-bottom: 30px;
-    font-size: 28px;
+    color: #007bff;
+    margin-bottom: 20px;
+    font-size: 32px;
 }
 
 .thongtin, .mssv, .ngaysinh, .sodienthoai {
     margin: 10px 0;
     padding: 10px;
-    background-color: #fff;
+    background-color: #f8f9fa;
     border-radius: 5px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     display: inline-block;
 }
 
 .thongtin b, .mssv b, .ngaysinh b, .sodienthoai b {
-    color: #1a73e8;
+    color: #007bff;
 }
 
 @media (max-width: 600px) {
@@ -48,15 +60,17 @@ h1 {
     }
     
     .profile-card {
-        padding: 15px;
+        flex-direction: column;
+        padding: 20px;
     }
     
-    .thongtin, .mssv, .ngaysinh, .sodienthoai {
-        padding: 8px;
+    .left-column, .right-column {
+        margin-right: 0;
+        margin-bottom: 20px;
     }
     
     h1 {
-        font-size: 24px;
+        font-size: 28px;
     }
 }
 
@@ -65,6 +79,7 @@ h1 {
     height: 150px;
     border-radius: 50%;
     margin-bottom: 20px;
+    border: 3px solid #007bff;
 }
 
 .contact-info p {
@@ -92,4 +107,19 @@ h1 {
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
     padding: 10px;
     margin-bottom: 10px;
+}
+
+#language-toggle {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#language-toggle:hover {
+    background-color: #0056b3;
 }

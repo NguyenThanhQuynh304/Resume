@@ -8,47 +8,95 @@
 </head>
 <body>
     <div class="container">
+        <button id="language-toggle">Switch Language</button>
         <div class="profile-card">
-            <!-- <img src="profile.jpg" alt="Profile Picture" class="profile-picture"> -->
-            <h1>Nguyễn Thanh Quỳnh</h1>
-            <div class="contact-info">
-                <p><b>Email:</b> <i>ntq304203@gmail.com</i></p>
-                <p><b>LinkedIn:</b> <i>linkedin.com/in/example</i></p>
+            <div class="left-column">
+                <img src="me.png" alt="Profile Picture" class="profile-picture">
+                <h1 id="name">Nguyễn Thanh Quỳnh</h1>
+                <div class="contact-info">
+                    <p><b>Email:</b> <i id="email">ntq304203@gmail.com</i></p>
+                    <p><b>LinkedIn:</b> <i id="linkedin">linkedin.com/in/example</i></p>
+                </div>
+                <div class="thongtin">
+                    <b>Tên:</b> <i id="full-name">Nguyễn Thanh Quỳnh</i>
+                </div>
+                <div class="mssv">
+                    <b>MSSV:</b> <i id="student-id">2180601296</i>
+                </div>
+                <div class="ngaysinh">
+                    <b>Ngày sinh:</b> <i id="birth-year">2003</i>
+                </div>
+                <div class="sodienthoai">
+                    <b>Điện thoại:</b> <i id="phone">0984924487</i>
+                </div>
             </div>
-            <div class="thongtin">
-                <b>Tên:</b> <i>Nguyễn Thanh Quỳnh</i>
-            </div>
-            <div class="mssv">
-                <b>MSSV:</b> <i>2180601296</i>
-            </div>
-            <div class="ngaysinh">
-                <b>Ngày sinh:</b> <i>2003</i>
-            </div>
-            <div class="sodienthoai">
-                <b>Điện thoại:</b> <i>0984924487</i>
-            </div>
-            <div class="skills">
-                <h2>Skills</h2>
-                <ul>
-                    <li>HTML & CSS</li>
-                    <li>JavaScript</li>
-                    <li>React</li>
-                </ul>
-            </div>
-            <div class="experience">
-                <h2>Experience</h2>
-                <ul>
-                    <li>Frontend Developer at XYZ Company</li>
-                    <li>Intern at ABC Corp</li>
-                </ul>
-            </div>
-            <div class="education">
-                <h2>Education</h2>
-                <ul>
-                    <li>Hutech University</li>
-                </ul>
+            <div class="right-column">
+                <div class="skills">
+                    <h2>Skills</h2>
+                    <ul>
+                        <li>HTML & CSS</li>
+                        <li>JavaScript</li>
+                        <li>React</li>
+                    </ul>
+                </div>
+                <div class="experience">
+                    <h2>Experience</h2>
+                    <ul>
+                        <li>Frontend Developer at XYZ Company</li>
+                        <li>Intern at ABC Corp</li>
+                    </ul>
+                </div>
+                <div class="education">
+                    <h2>Education</h2>
+                    <ul>
+                        <li>Hutech University</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
+    <script>
+        const toggleButton = document.getElementById('language-toggle');
+        const elements = {
+            name: document.getElementById('name'),
+            email: document.getElementById('email'),
+            linkedin: document.getElementById('linkedin'),
+            fullName: document.getElementById('full-name'),
+            studentId: document.getElementById('student-id'),
+            birthYear: document.getElementById('birth-year'),
+            phone: document.getElementById('phone')
+        };
+
+        const translations = {
+            en: {
+                name: 'Nguyen Thanh Quynh',
+                email: 'ntq304203@gmail.com',
+                linkedin: 'linkedin.com/in/example',
+                fullName: 'Nguyen Thanh Quynh',
+                studentId: '2180601296',
+                birthYear: '2003',
+                phone: '0984924487'
+            },
+            vi: {
+                name: 'Nguyễn Thanh Quỳnh',
+                email: 'ntq304203@gmail.com',
+                linkedin: 'linkedin.com/in/example',
+                fullName: 'Nguyễn Thanh Quỳnh',
+                studentId: '2180601296',
+                birthYear: '2003',
+                phone: '0984924487'
+            }
+        };
+
+        let currentLanguage = 'en';
+
+        toggleButton.addEventListener('click', () => {
+            currentLanguage = currentLanguage === 'en' ? 'vi' : 'en';
+            const translation = translations[currentLanguage];
+            for (const key in elements) {
+                elements[key].innerText = translation[key];
+            }
+        });
+    </script>
 </body>
 </html>
