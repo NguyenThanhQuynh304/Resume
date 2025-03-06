@@ -1,102 +1,442 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Cá Nhân</title>
-    <link rel="stylesheet" href="style.css">
+    <title>COVER LETTER</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <button id="language-toggle">Switch Language</button>
-        <div class="profile-card">
-            <div class="left-column">
-                <img src="me.png" alt="Profile Picture" class="profile-picture">
-                <h1 id="name">Nguyễn Thanh Quỳnh</h1>
-                <div class="contact-info">
-                    <p><b>Email:</b> <i id="email">ntq304203@gmail.com</i></p>
-                    <p><b>LinkedIn:</b> <i id="linkedin">linkedin.com/in/example</i></p>
-                </div>
-                <div class="thongtin">
-                    <b>Tên:</b> <i id="full-name">Nguyễn Thanh Quỳnh</i>
-                </div>
-                <div class="mssv">
-                    <b>MSSV:</b> <i id="student-id">2180601296</i>
-                </div>
-                <div class="ngaysinh">
-                    <b>Ngày sinh:</b> <i id="birth-year">2003</i>
-                </div>
-                <div class="sodienthoai">
-                    <b>Điện thoại:</b> <i id="phone">0984924487</i>
-                </div>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button id="languageToggle" class="language-btn">
+            <img src="https://cdn-icons-png.flaticon.com/512/197/197473.png" alt="Vietnamese Flag" class="flag-icon" id="languageFlag">
+            <span id="languageText">Tiếng Việt</span>
+        </button>
+        <div class="language-dropdown" id="languageDropdown">
+            <div class="language-option" data-lang="vi">
+                <img src="https://cdn-icons-png.flaticon.com/512/197/197473.png" alt="Vietnamese Flag" class="flag-icon">
+                <span>Vietnamese</span>
             </div>
-            <div class="right-column">
-                <div class="skills">
-                    <h2>Skills</h2>
-                    <ul>
-                        <li>HTML & CSS</li>
-                        <li>JavaScript</li>
-                        <li>React</li>
-                    </ul>
-                </div>
-                <div class="experience">
-                    <h2>Experience</h2>
-                    <ul>
-                        <li>Frontend Developer at XYZ Company</li>
-                        <li>Intern at ABC Corp</li>
-                    </ul>
-                </div>
-                <div class="education">
-                    <h2>Education</h2>
-                    <ul>
-                        <li>Hutech University</li>
-                    </ul>
-                </div>
+            <div class="language-option" data-lang="en">
+                <img src="https://cdn-icons-png.flaticon.com/512/197/197484.png" alt="English Flag" class="flag-icon">
+                <span>English</span>
             </div>
         </div>
     </div>
+
+    <div class="container">
+        <header>
+            <h1 data-translate="full-name">NGUYỄN THANH QUỲNH</h1>
+        </header>
+        
+        <section id="contact">
+            <h2 data-translate="contact">THÔNG TIN LIÊN HỆ</h2>
+            <ul>
+                <li><span>Email:</span>ntq304203@gmail.com</li>
+                <li><span data-translate="phone">Điện thoại:</span>0984924487</li>
+                <li><span data-translate="address">Địa chỉ:</span> <span data-translate="address-content" class="address-text">Xô Viết Nghệ Tỉnh, Quận Bình Thạnh, TP HCM</span></li>
+                <li><span>GitHub:</span> <a href="https://github.com/NguyenThanhQuynh304">github.com/NguyenThanhQuynh304</a></li>
+                <!-- <li><span>LinkedIn:</span> <a href="https://linkedin.com/in/ntquynh-dev">linkedin.com/in/ntquynh-dev</a></li> -->
+            </ul>
+        </section>
+        
+        <section id="objective">
+            <h2 data-translate="objective">MỤC TIÊU NGHỀ NGHIỆP</h2>
+            <p data-translate="objective-content">Lập trình viên Fullstack với chuyên môn sâu về Java Backend và khả năng áp dụng Spring Boot, PostgreSQL để phát triển các ứng dụng web có độ mở rộng cao. Mong muốn đóng góp kỹ năng kỹ thuật và tư duy giải quyết vấn đề vào môi trường phát triển phần mềm chuyên nghiệp.</p>
+        </section>
+        
+        <section id="skills">
+            <h2 data-translate="skills">KỸ NĂNG CHUYÊN MÔN</h2>
+            <div class="skill-category">
+                <h3 data-translate="backend">Backend Technologies:</h3>
+                <ul>
+                    <li>Java (Spring Boot, OOP, Collections), Python (Django/Flask), C#, PHP</li>
+                    <li>REST API Development, Microservices Architecture</li>
+                    <li>Database: PostgreSQL, MySQL</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3 data-translate="frontend">Frontend & Mobile:</h3>
+                <ul>
+                    <li>React, Bootstrap, ASP.NET Core MVC</li>
+                    <li>Flutter & Dart for cross-platform mobile development</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3 data-translate="devops">DevOps & Tools:</h3>
+                <ul>
+                    <li>Git, GitLab, Docker</li>
+                    <li>Cloud Services: Google Cloud, Render</li>
+                    <li>Project Management: Agile/Scrum, Taiga</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="experience">
+            <h2 data-translate="experience">KINH NGHIỆM LÀM VIỆC</h2>
+            <div class="job">
+                <h3>Backend Developer Intern | FPT Software Company (11/2024 - 01/2025)</h3>
+                <div class="par-section">
+                    <p><strong data-translate="problem">Vấn đề:</strong> <span data-translate="exp1-problem">Công ty cần phát triển nền tảng e-learning marketplace với khả năng mở rộng cao và hiệu suất tối ưu.</span></p>
+                    <p><strong data-translate="action">Hành động:</strong></p>
+                    <ul>
+                        <li data-translate="exp1-action1">Thiết kế và triển khai RESTful API cho hệ thống xác thực và quản lý khóa học sử dụng Spring Boot</li>
+                        <li data-translate="exp1-action2">Tối ưu hóa cấu trúc cơ sở dữ liệu PostgreSQL để đáp ứng nhu cầu truy vấn lớn</li>
+                        <li data-translate="exp1-action3">Xây dựng hệ thống dashboard analytics cho người dạy và quản trị viên</li>
+                        <li data-translate="exp1-action4">Thiết lập CI/CD pipeline với Docker, Google Cloud và Render</li>
+                    </ul>
+                    <p><strong data-translate="result">Kết quả:</strong></p>
+                    <ul>
+                        <li data-translate="exp1-result1">Hoàn thành dự án đúng thời hạn với đầy đủ chức năng yêu cầu</li>
+                        <li data-translate="exp1-result2">Được mentor đánh giá cao về chất lượng code và kiến trúc hệ thống</li>
+                        <li data-translate="exp1-result3">Được ghi nhận là thực tập sinh tích cực với khả năng học hỏi nhanh</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="projects">
+            <h2 data-translate="projects">DỰ ÁN HỌC TẬP NỔI BẬT</h2>
+            
+            <div class="project">
+                <h3 data-translate="proj1-title">1. Shoes eCommerce Mobile App (01/2025)</h3>
+                <div class="par-section">
+                    <p><strong data-translate="problem">Vấn đề:</strong> <span data-translate="proj1-problem">Dự án môn học yêu cầu phát triển ứng dụng thương mại điện tử đa nền tảng với trải nghiệm người dùng tối ưu.</span></p>
+                    <p><strong data-translate="action">Hành động:</strong></p>
+                    <ul>
+                        <li data-translate="proj1-action1">Phát triển ứng dụng đa nền tảng với Flutter và Dart</li>
+                        <li data-translate="proj1-action2">Xây dựng backend Python cho quản lý sản phẩm và đơn hàng</li>
+                        <li data-translate="proj1-action3">Thiết kế UI/UX tương thích với cả iOS và Android</li>
+                    </ul>
+                    <p><strong data-translate="result">Kết quả:</strong></p>
+                    <ul>
+                        <li data-translate="proj1-result1">Đạt điểm A cho dự án cuối kỳ</li>
+                        <li data-translate="proj1-result2">Hoàn thành tất cả các yêu cầu chức năng của đề bài</li>
+                        <li data-translate="proj1-result3">Được giảng viên đánh giá cao về giao diện người dùng trực quan</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="project">
+                <h3 data-translate="proj2-title">2. Hệ thống Quản lý Thời khóa biểu Giảng viên (02/2025)</h3>
+                <div class="par-section">
+                    <p><strong data-translate="problem">Vấn đề:</strong> <span data-translate="proj2-problem">Project required building an automatic timetable allocation and management system.</span></p>
+                    <p><strong data-translate="action">Hành động:</strong></p>
+                    <ul>
+                        <li data-translate="proj2-action1">Developed a schedule management system with intuitive interface</li>
+                        <li data-translate="proj2-action2">Designed optimized database for complex schedule queries</li>
+                        <li data-translate="proj2-action3">Implemented JWT Authentication to secure schedule information</li>
+                    </ul>
+                    <p><strong data-translate="result">Kết quả:</strong></p>
+                    <ul>
+                        <li data-translate="proj2-result1">Successfully resolved schedule conflict issues in the allocation algorithm</li>
+                        <li data-translate="proj2-result2">Created an intuitive interface for easy information management</li>
+                        <li data-translate="proj2-result3">Completed the project ahead of deadline and passed all test cases</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="project">
+                <h3 data-translate="proj3-title">3. Website Studio Chụp Hình (06/2024)</h3>
+                <div class="par-section">
+                    <p><strong data-translate="problem">Vấn đề:</strong> <span data-translate="proj3-problem">Dự án môn học yêu cầu xây dựng website quản lý đặt lịch và hiển thị portfolio.</span></p>
+                    <p><strong data-translate="action">Hành động:</strong></p>
+                    <ul>
+                        <li data-translate="proj3-action1">Xây dựng hệ thống đặt lịch và quản lý với ASP.NET Core MVC</li>
+                        <li data-translate="proj3-action2">Phát triển tính năng hiển thị và lọc portfolio theo danh mục</li>
+                        <li data-translate="proj3-action3">Tích hợp mô phỏng thanh toán đặt cọc trực tuyến</li>
+                    </ul>
+                    <p><strong data-translate="result">Kết quả:</strong></p>
+                    <ul>
+                        <li data-translate="proj3-result1">Đạt điểm cao trong đánh giá về thiết kế cơ sở dữ liệu và business logic</li>
+                        <li data-translate="proj3-result2">Triển khai thành công các design pattern MVC và Repository</li>
+                        <li data-translate="proj3-result3">Xây dựng thành công hệ thống xử lý đồng thời nhiều yêu cầu đặt lịch</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="project">
+                <h3 data-translate="proj4-title">4. Website Nghe Nhạc Trực Tuyến (04/2024)</h3>
+                <div class="par-section">
+                    <p><strong data-translate="problem">Vấn đề:</strong> <span data-translate="proj4-problem">Dự án yêu cầu xây dựng hệ thống streaming nhạc với tính năng gợi ý cá nhân hóa.</span></p>
+                    <p><strong data-translate="action">Hành động:</strong></p>
+                    <ul>
+                        <li data-translate="proj4-action1">Phát triển ứng dụng streaming với ASP.NET Core MVC và JavaScript</li>
+                        <li data-translate="proj4-action2">Thiết kế và triển khai thuật toán đề xuất dựa trên lịch sử nghe</li>
+                        <li data-translate="proj4-action3">Xây dựng tính năng tạo và chia sẻ playlist</li>
+                    </ul>
+                    <p><strong data-translate="result">Kết quả:</strong></p>
+                    <ul>
+                        <li data-translate="proj4-result1">Phát triển thuật toán đề xuất với độ chính xác cao trong môi trường test</li>
+                        <li data-translate="proj4-result2">Tối ưu hóa thành công việc load và phát nhạc trực tuyến</li>
+                        <li data-translate="proj4-result3">Đạt điểm A cho dự án học phần Phát triển ứng dụng web nâng cao</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="project">
+                <h3 data-translate="proj5-title">5. Ứng Dụng Mã Hóa Thông Tin (04/2024)</h3>
+                <div class="par-section">
+                    <p><strong data-translate="problem">Vấn đề:</strong> <span data-translate="proj5-problem">Dự án môn học yêu cầu xây dựng ứng dụng mã hóa và giải mã dữ liệu.</span></p>
+                    <p><strong data-translate="action">Hành động:</strong></p>
+                    <ul>
+                        <li data-translate="proj5-action1">Nghiên cứu và triển khai các thuật toán mã hóa AES, DES</li>
+                        <li data-translate="proj5-action2">Phát triển ứng dụng Java với giao diện Swing</li>
+                        <li data-translate="proj5-action3">Xây dựng bộ kiểm tra độ an toàn của mã hóa với JUnit Testing</li>
+                    </ul>
+                    <p><strong data-translate="result">Kết quả:</strong></p>
+                    <ul>
+                        <li data-translate="proj5-result1">Triển khai thành công 5 thuật toán mã hóa khác nhau</li>
+                        <li data-translate="proj5-result2">Đạt coverage test 90% thông qua unit testing</li>
+                        <li data-translate="proj5-result3">Được giảng viên đánh giá cao về hiểu biết sâu về các nguyên tắc bảo mật</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="education">
+            <h2 data-translate="education">HỌC VẤN</h2>
+            <div class="education-item">
+                <h3 data-translate="edu-title">Đại Học HUTECH, Thành Phố Hồ Chí Minh (2021 - 2025)</h3>
+                <ul>
+                    <li data-translate="edu-major">Chuyên ngành: Công Nghệ Phần Mềm</li>
+                    <li data-translate="edu-grad">Dự kiến tốt nghiệp: 2025</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="certificates">
+            <h2 data-translate="certificates">CHỨNG CHỈ & HOẠT ĐỘNG NGOẠI KHÓA</h2>
+            <ul>
+                <li data-translate="cert1">Chứng chỉ tiếng Anh B1 (CEFR)</li>
+                <li data-translate="cert2">Chứng chỉ Kỹ năng Thuyết trình và Làm việc nhóm</li>
+            </ul>
+        </section>
+    </div>
+
     <script>
-        const toggleButton = document.getElementById('language-toggle');
-        const elements = {
-            name: document.getElementById('name'),
-            email: document.getElementById('email'),
-            linkedin: document.getElementById('linkedin'),
-            fullName: document.getElementById('full-name'),
-            studentId: document.getElementById('student-id'),
-            birthYear: document.getElementById('birth-year'),
-            phone: document.getElementById('phone')
-        };
+    // Language translations
+    const translations = {
+        en: {
+            "full-name": "NGUYEN THANH QUYNH",
+            "address-content": "Xo Viet Nghe Tinh Street, Binh Thanh District, Ho Chi Minh City",
+            "contact": "CONTACT INFORMATION",
+            "phone": "Phone:",
+            "address": "Address:",
+            "objective": "CAREER OBJECTIVE",
+            "objective-content": "Fullstack developer with deep expertise in Java Backend and ability to apply Spring Boot, PostgreSQL to develop highly scalable web applications. Desire to contribute technical skills and problem-solving thinking to a professional software development environment.",
+            "skills": "PROFESSIONAL SKILLS",
+            "backend": "Backend Technologies:",
+            "frontend": "Frontend & Mobile:",
+            "devops": "DevOps & Tools:",
+            "experience": "WORK EXPERIENCE",
+            "projects": "NOTABLE ACADEMIC PROJECTS",
+            "education": "EDUCATION",
+            "certificates": "CERTIFICATES & EXTRACURRICULAR ACTIVITIES",
+            "problem": "Problem:",
+            "action": "Action:",
+            "result": "Result:",
+            "exp1-problem": "The company needed to develop an e-learning marketplace platform with high scalability and optimal performance.",
+            "exp1-action1": "Designed and implemented RESTful APIs for authentication and course management systems using Spring Boot",
+            "exp1-action2": "Optimized PostgreSQL database structure to meet high query demands",
+            "exp1-action3": "Built analytics dashboard system for instructors and administrators",
+            "exp1-action4": "Set up CI/CD pipeline with Docker, Google Cloud and Render",
+            "exp1-result1": "Completed the project on time with all required functionalities",
+            "exp1-result2": "Received high praise from mentor for code quality and system architecture",
+            "exp1-result3": "Recognized as a proactive intern with fast learning abilities",
+            "proj1-problem": "Course project required developing a cross-platform e-commerce application with optimal user experience.",
+            "proj1-action1": "Developed cross-platform application with Flutter and Dart",
+            "proj1-action2": "Built Python backend for product and order management",
+            "proj1-action3": "Designed UI/UX compatible with both iOS and Android",
+            "proj1-result1": "Received an A grade for the final project",
+            "proj1-result2": "Completed all functional requirements of the assignment",
+            "proj1-result3": "Received high praise from professor for intuitive user interface",
+            "proj2-problem": "Project required building an automatic timetable allocation and management system.",
+            "proj2-action1": "Developed a schedule management system with intuitive interface",
+            "proj2-action2": "Designed optimized database for complex schedule queries",
+            "proj2-action3": "Implemented JWT Authentication to secure schedule information",
+            "proj2-result1": "Successfully resolved schedule conflict issues in the allocation algorithm",
+            "proj2-result2": "Created an intuitive interface for easy information management",
+            "proj2-result3": "Completed the project ahead of deadline and passed all test cases",
+            "proj3-problem": "Course project required building a website for booking management and portfolio display.",
+            "proj3-action1": "Built booking and management system with ASP.NET Core MVC",
+            "proj3-action2": "Developed feature to display and filter portfolio by category",
+            "proj3-action3": "Integrated simulated deposit payment online",
+            "proj3-result1": "Achieved high scores in database design and business logic evaluation",
+            "proj3-result2": "Successfully implemented MVC and Repository design patterns",
+            "proj3-result3": "Successfully built a system to handle multiple booking requests simultaneously",
+            "proj4-problem": "Project required building a music streaming system with personalized recommendation features.",
+            "proj4-action1": "Developed streaming application with ASP.NET Core MVC and JavaScript",
+            "proj4-action2": "Designed and implemented recommendation algorithm based on listening history",
+            "proj4-action3": "Built playlist creation and sharing features",
+            "proj4-result1": "Developed recommendation algorithm with high accuracy in test environment",
+            "proj4-result2": "Successfully optimized music loading and streaming",
+            "proj4-result3": "Received an A grade for the Advanced Web Application Development course project",
+            "proj5-problem": "Course project required building an application for data encryption and decryption.",
+            "proj5-action1": "Researched and implemented AES, DES encryption algorithms",
+            "proj5-action2": "Developed Java application with Swing interface",
+            "proj5-action3": "Built encryption security tester with JUnit Testing",
+            "edu-major": "Major: Software Engineering",
+            "edu-grad": "Expected graduation: 2025",
+            "edu-courses": "Notable courses: Advanced Java Programming, Web Application Development, Database, Software Architecture",
+            "cert1": "English Certificate B1 (CEFR)",
+            "cert2": "Certificate in Presentation Skills and Teamwork",
+            "proj1-title": "Shoes eCommerce Mobile App (01/2025)",
+            "proj2-title": "Lecturer Timetable Management System (02/2025)",
+            "proj3-title": "Photography Studio Website (06/2024)",
+            "proj4-title": "Online Music Streaming Website (04/2024)",
+            "proj5-title": "Information Encryption Application (04/2024)",
+            "edu-title": "HUTECH University, Ho Chi Minh City (2021 - 2025)",
+            "proj5-result1": "Successfully implemented 5 different encryption algorithms",
+            "proj5-result2": "Achieved 90% test coverage through unit testing",
+            "proj5-result3": "Received high praise from professor for deep understanding of security principles"
+        },
+        vi: {
+            "full-name": "NGUYỄN THANH QUỲNH",
+            "address-content": "Xô Viết Nghệ Tỉnh, Quận Bình Thạnh, TP HCM",
+            "contact": "THÔNG TIN LIÊN HỆ",
+            "phone": "Điện thoại:",
+            "address": "Địa chỉ:",
+            "objective": "MỤC TIÊU NGHỀ NGHIỆP",
+            "objective-content": "Lập trình viên Fullstack với chuyên môn sâu về Java Backend và khả năng áp dụng Spring Boot, PostgreSQL để phát triển các ứng dụng web có độ mở rộng cao. Mong muốn đóng góp kỹ năng kỹ thuật và tư duy giải quyết vấn đề vào môi trường phát triển phần mềm chuyên nghiệp.",
+            "skills": "KỸ NĂNG CHUYÊN MÔN",
+            "backend": "Backend Technologies:",
+            "frontend": "Frontend & Mobile:",
+            "devops": "DevOps & Tools:",
+            "experience": "KINH NGHIỆM LÀM VIỆC",
+            "projects": "DỰ ÁN HỌC TẬP NỔI BẬT",
+            "education": "HỌC VẤN",
+            "certificates": "CHỨNG CHỈ & HOẠT ĐỘNG NGOẠI KHÓA",
+            "problem": "Vấn đề:",
+            "action": "Hành động:",
+            "result": "Kết quả:",
+            "exp1-problem": "Công ty cần phát triển nền tảng e-learning marketplace với khả năng mở rộng cao và hiệu suất tối ưu.",
+            "exp1-action1": "Thiết kế và triển khai RESTful API cho hệ thống xác thực và quản lý khóa học sử dụng Spring Boot",
+            "exp1-action2": "Tối ưu hóa cấu trúc cơ sở dữ liệu PostgreSQL để đáp ứng nhu cầu truy vấn lớn",
+            "exp1-action3": "Xây dựng hệ thống dashboard analytics cho người dạy và quản trị viên",
+            "exp1-action4": "Thiết lập CI/CD pipeline với Docker, Google Cloud và Render",
+            "exp1-result1": "Hoàn thành dự án đúng thời hạn với đầy đủ chức năng yêu cầu",
+            "exp1-result2": "Được mentor đánh giá cao về chất lượng code và kiến trúc hệ thống",
+            "exp1-result3": "Được ghi nhận là thực tập sinh tích cực với khả năng học hỏi nhanh",
+            "proj1-problem": "Dự án môn học yêu cầu phát triển ứng dụng thương mại điện tử đa nền tảng với trải nghiệm người dùng tối ưu.",
+            "proj1-action1": "Phát triển ứng dụng đa nền tảng với Flutter và Dart",
+            "proj1-action2": "Xây dựng backend Python cho quản lý sản phẩm và đơn hàng",
+            "proj1-action3": "Thiết kế UI/UX tương thích với cả iOS và Android",
+            "proj1-result1": "Đạt điểm A cho dự án cuối kỳ",
+            "proj1-result2": "Hoàn thành tất cả các yêu cầu chức năng của đề bài",
+            "proj1-result3": "Được giảng viên đánh giá cao về giao diện người dùng trực quan",
+            "proj2-problem": "Dự án yêu cầu xây dựng hệ thống phân bổ và quản lý thời khóa biểu tự động.",
+            "proj2-action1": "Phát triển hệ thống quản lý lịch với giao diện trực quan",
+            "proj2-action2": "Thiết kế cơ sở dữ liệu tối ưu cho việc truy vấn lịch phức tạp",
+            "proj2-action3": "Triển khai JWT Authentication để bảo vệ thông tin lịch giảng dạy",
+            "proj2-result1": "Giải quyết thành công vấn đề xung đột lịch trong thuật toán phân bổ",
+            "proj2-result2": "Tạo được giao diện trực quan giúp dễ dàng quản lý thông tin",
+            "proj2-result3": "Hoàn thành dự án trước deadline và vượt qua tất cả test case",
+            "proj3-problem": "Dự án môn học yêu cầu xây dựng website quản lý đặt lịch và hiển thị portfolio.",
+            "proj3-action1": "Xây dựng hệ thống đặt lịch và quản lý với ASP.NET Core MVC",
+            "proj3-action2": "Phát triển tính năng hiển thị và lọc portfolio theo danh mục",
+            "proj3-action3": "Tích hợp mô phỏng thanh toán đặt cọc trực tuyến",
+            "proj3-result1": "Đạt điểm cao trong đánh giá về thiết kế cơ sở dữ liệu và business logic",
+            "proj3-result2": "Triển khai thành công các design pattern MVC và Repository",
+            "proj3-result3": "Xây dựng thành công hệ thống xử lý đồng thời nhiều yêu cầu đặt lịch",
+            "proj4-problem": "Dự án yêu cầu xây dựng hệ thống streaming nhạc với tính năng gợi ý cá nhân hóa.",
+            "proj4-action1": "Phát triển ứng dụng streaming với ASP.NET Core MVC và JavaScript",
+            "proj4-action2": "Thiết kế và triển khai thuật toán đề xuất dựa trên lịch sử nghe",
+            "proj4-action3": "Xây dựng tính năng tạo và chia sẻ playlist",
+            "proj4-result1": "Phát triển thuật toán đề xuất với độ chính xác cao trong môi trường test",
+            "proj4-result2": "Tối ưu hóa thành công việc load và phát nhạc trực tuyến",
+            "proj4-result3": "Đạt điểm A cho dự án học phần Phát triển ứng dụng web nâng cao",
+            "proj5-problem": "Dự án môn học yêu cầu xây dựng ứng dụng mã hóa và giải mã dữ liệu.",
+            "proj5-action1": "Nghiên cứu và triển khai các thuật toán mã hóa AES, DES",
+            "proj5-action2": "Phát triển ứng dụng Java với giao diện Swing",
+            "proj5-action3": "Xây dựng bộ kiểm tra độ an toàn của mã hóa với JUnit Testing",
+            "edu-major": "Chuyên ngành: Công Nghệ Phần Mềm",
+            "edu-grad": "Dự kiến tốt nghiệp: 2025",
+            "edu-courses": "Các môn học nổi bật: Lập trình Java nâng cao, Phát triển ứng dụng web, Cơ sở dữ liệu, Kiến trúc phần mềm",
+            "cert1": "Chứng chỉ tiếng Anh B1 (CEFR)",
+            "cert2": "Chứng chỉ Kỹ năng Thuyết trình và Làm việc nhóm",
+            "proj1-title": "Ứng dụng Thương mại Điện tử Giày (01/2025)",
+            "proj2-title": "Hệ thống Quản lý Thời khóa biểu Giảng viên (02/2025)",
+            "proj3-title": "Website Studio Chụp Hình (06/2024)",
+            "proj4-title": "Website Nghe Nhạc Trực Tuyến (04/2024)",
+            "proj5-title": "Ứng Dụng Mã Hóa Thông Tin (04/2024)",
+            "edu-title": "Đại Học HUTECH, Thành Phố Hồ Chí Minh (2021 - 2025)",
+            "proj5-result1": "Triển khai thành công 5 thuật toán mã hóa khác nhau",
+            "proj5-result2": "Đạt coverage test 90% thông qua unit testing",
+            "proj5-result3": "Được giảng viên đánh giá cao về hiểu biết sâu về các nguyên tắc bảo mật"
+        }
+    };
 
-        const translations = {
-            en: {
-                name: 'Nguyen Thanh Quynh',
-                email: 'ntq304203@gmail.com',
-                linkedin: 'linkedin.com/in/example',
-                fullName: 'Nguyen Thanh Quynh',
-                studentId: '2180601296',
-                birthYear: '2003',
-                phone: '0984924487'
-            },
-            vi: {
-                name: 'Nguyễn Thanh Quỳnh',
-                email: 'ntq304203@gmail.com',
-                linkedin: 'linkedin.com/in/example',
-                fullName: 'Nguyễn Thanh Quỳnh',
-                studentId: '2180601296',
-                birthYear: '2003',
-                phone: '0984924487'
-            }
-        };
+    // Current language
+    let currentLang = 'vi'; // Default language is Vietnamese
 
-        let currentLanguage = 'en';
-
-        toggleButton.addEventListener('click', () => {
-            currentLanguage = currentLanguage === 'en' ? 'vi' : 'en';
-            const translation = translations[currentLanguage];
-            for (const key in elements) {
-                elements[key].innerText = translation[key];
+    // Language switcher functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const languageToggle = document.getElementById('languageToggle');
+        const languageDropdown = document.getElementById('languageDropdown');
+        const languageOptions = document.querySelectorAll('.language-option');
+        
+        // Toggle dropdown
+        languageToggle.addEventListener('click', function() {
+            languageDropdown.classList.toggle('active');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.language-switcher')) {
+                languageDropdown.classList.remove('active');
             }
         });
+        
+        // Language selection
+        languageOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                changeLanguage(lang);
+                languageDropdown.classList.remove('active');
+                
+                // Update button appearance
+                const flagSrc = this.querySelector('img').src;
+                const langText = this.querySelector('span').textContent;
+                
+                document.getElementById('languageFlag').src = flagSrc;
+                document.getElementById('languageText').textContent = langText;
+            });
+        });
+        
+        // Change language function
+        function changeLanguage(lang) {
+            currentLang = lang;
+            
+            // Update all translatable elements
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            // You might want to save language preference to localStorage
+            localStorage.setItem('preferredLanguage', lang);
+        }
+        
+        // Initialize with saved language or default
+        const savedLang = localStorage.getItem('preferredLanguage');
+        if (savedLang) {
+            changeLanguage(savedLang);
+            
+            // Update button appearance based on saved language
+            const option = document.querySelector(`.language-option[data-lang="${savedLang}"]`);
+            if (option) {
+                const flagSrc = option.querySelector('img').src;
+                const langText = option.querySelector('span').textContent;
+                
+                document.getElementById('languageFlag').src = flagSrc;
+                document.getElementById('languageText').textContent = langText;
+            }
+        }
+    });
     </script>
 </body>
 </html>
